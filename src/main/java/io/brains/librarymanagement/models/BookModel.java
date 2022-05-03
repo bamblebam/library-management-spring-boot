@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 // Book Model
-@Document
+@Document(collection = "books")
 public class BookModel {
     @Id
     private String id;
@@ -36,15 +36,15 @@ public class BookModel {
         this.description = description;
     }
 
-    // @Override
-    // public String toString() {
-    //     return "BookModel{" +
-    //             "id='" + id + '\'' +
-    //             ", title='" + title + '\'' +
-    //             ", author='" + author + '\'' +
-    //             ", genre='" + genre + '\'' +
-    //             ", publisher='" + publisher + '\'' +
-    //             ", description='" + description + '\'' +
-    //             '}';
-    // }
+    @Override
+    public String toString() {
+        return "BookModel{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", genre='" + genre + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
